@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+      <span class="navbar-toggler-icon"></span>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/home">Home</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="nome">Digite seu nome</label>
+    <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Nome" [(ngModel)]="nome" name="nome">
+  </div>
+  <div class="form-group">
+    <label for="telefone">CPF</label>
+    <input type="number" class="form-control" id="cpf" placeholder="CPF" [(ngModel)]="cpf" name="cpf">
+  </div>
+  <div class="form-group">
+    <label for="email">Café</label>
+    <input type="text" class="form-control" id="cafe" placeholder="Café" [(ngModel)]="cafe" name="cafe">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary"  (click)="inserir()">Cadastrar café</button>
+</form>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Café</th>
+    <th>Ação</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let cafe of listagem">
+      <th>{{cafe.id}}</th>
+      <th>{{cafe.nome}}</th>
+      <th>{{cafe.cpf}}</th>
+      <th>{{cafe.cafe}}</th>
+      <th><button type="button" class="btn btn-danger" (click)="deletar(cafe.id)">Deletar</button></th>
+    </tr>
+  </tbody>
+</table>
+
