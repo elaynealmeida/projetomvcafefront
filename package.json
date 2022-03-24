@@ -1,6 +1,8 @@
 {
   "name": "cafemv",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.14.0"},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
